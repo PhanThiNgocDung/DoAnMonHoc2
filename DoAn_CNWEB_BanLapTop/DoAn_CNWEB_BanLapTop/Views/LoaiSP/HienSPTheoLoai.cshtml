@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DoAn_CNWEB_BanLapTop.Models.SanPham>
+@{
+    ViewBag.Title = "HienSPTheoLoai";
+    Layout = "~/Views/Share/LayOutSP.cshtml";
+}
+    <div class="row mx-auto" style="padding-left:10px">
+    @foreach (var item in Model) {
+    
+            <div class=" col col-4 ">
+            <div class="row featured-block">
+                <img  class="featured-img img-responsive card" src="~/HinhAnhSP/@Html.DisplayFor(modelItem => item.AnhBia)"  alt="Featured 1" data-tilt height="70%;" width="70%" />
+                </div>
+                @if (item.TenSanPham.Length > 30)
+                {
+                   <p><strong ><a  href=" @Url.Action("ChiTietSP", "Product", new { maSP = item.MaSanPham })" title="@item.TenSanPham">@item.TenSanPham.Substring(0, 30)...</a>
+                    </strong></p>
+                    <p style="padding-left:70px"> <a href=" @Url.Action("ChiTietSP", "Product", new { maSP = item.MaSanPham })" >Xem Chi tiết</a>
+               </p>
+                         }
+                else
+                {
+                    <p><strong ><a  href=" @Url.Action("ChiTietSP", "Product", new { maSP = item.MaSanPham })" title="@item.TenSanPham">@item.TenSanPham</a>
+                    </strong></p>
+                    <p style="padding-left:70px"> <a href=" @Url.Action("ChiTietSP", "Product", new { maSP = item.MaSanPham })" >Xem Chi tiết</a>
+               </p>
+                }
+            </div>
+    
+    }
+    </div>

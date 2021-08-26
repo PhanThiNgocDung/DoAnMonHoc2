@@ -1,0 +1,15 @@
+﻿@using DoAn_CNWEB_BanLapTop.Models;
+@model List<NhaSanXuat>
+<ul class="list-group list-group-flush text-left">
+   <li class="list-group-item" style="background-color:darkorange;"><a href="#" style="text-transform:uppercase; text-decoration:none; color:white; font-weight:bold;">☰ SẢN PHẨM THEO HÃNG</a></li>
+        @{
+        foreach (var item in Model)
+        {
+           <li class ="list-group-item">
+               <a href="@Url.Action("HienSPTheoNXB", "NhaXuatBan", new{ @maNXB = item.MaNSX})" style="text-transform:uppercase; text-decoration: none;">@item.TenNSX</a>
+           </li>
+        }
+        <li class="list-group-item"><a href="#" style="text-transform:uppercase; text-decoration: none;"></a></li>
+        }
+
+</ul>

@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyBanLapTopModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="QuanLyBanLapTopEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="QuanLyBanLapTopModel.Admin" />
+    <EntitySet Name="CT_DonHang" EntityType="QuanLyBanLapTopModel.CT_DonHang" />
+    <EntitySet Name="DonHangs" EntityType="QuanLyBanLapTopModel.DonHang" />
+    <EntitySet Name="HinhAnhSPs" EntityType="QuanLyBanLapTopModel.HinhAnhSP" />
+    <EntitySet Name="KhachHangs" EntityType="QuanLyBanLapTopModel.KhachHang" />
+    <EntitySet Name="Loais" EntityType="QuanLyBanLapTopModel.Loai" />
+    <EntitySet Name="LoaiTinTucs" EntityType="QuanLyBanLapTopModel.LoaiTinTuc" />
+    <EntitySet Name="MoTas" EntityType="QuanLyBanLapTopModel.MoTa" />
+    <EntitySet Name="NhaSanXuats" EntityType="QuanLyBanLapTopModel.NhaSanXuat" />
+    <EntitySet Name="SanPhams" EntityType="QuanLyBanLapTopModel.SanPham" />
+    <EntitySet Name="TinTucs" EntityType="QuanLyBanLapTopModel.TinTuc" />
+    <AssociationSet Name="FK_CT_DonHang_DonHang" Association="QuanLyBanLapTopModel.FK_CT_DonHang_DonHang">
+      <End Role="DonHang" EntitySet="DonHangs" />
+      <End Role="CT_DonHang" EntitySet="CT_DonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_DonHang_SanPham" Association="QuanLyBanLapTopModel.FK_CT_DonHang_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="CT_DonHang" EntitySet="CT_DonHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonHang_KhachHang" Association="QuanLyBanLapTopModel.FK_DonHang_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="DonHang" EntitySet="DonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_HinhAnhSP" Association="QuanLyBanLapTopModel.FK_SanPham_HinhAnhSP">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="HinhAnhSP" EntitySet="HinhAnhSPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_Loai" Association="QuanLyBanLapTopModel.FK_SanPham_Loai">
+      <End Role="Loai" EntitySet="Loais" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_TinTuc_LoaiTin" Association="QuanLyBanLapTopModel.FK_CT_TinTuc_LoaiTin">
+      <End Role="LoaiTinTuc" EntitySet="LoaiTinTucs" />
+      <End Role="TinTuc" EntitySet="TinTucs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_MoTa" Association="QuanLyBanLapTopModel.FK_SanPham_MoTa">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="MoTa" EntitySet="MoTas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_NhaSanXuat" Association="QuanLyBanLapTopModel.FK_SanPham_NhaSanXuat">
+      <End Role="NhaSanXuat" EntitySet="NhaSanXuats" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="TenTaiKhoan" />
+      <PropertyRef Name="MatKhau" />
+    </Key>
+    <Property Name="TenTaiKhoan" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="HoTen" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CT_DonHang">
+    <Key>
+      <PropertyRef Name="MaDonHang" />
+      <PropertyRef Name="MaSanPham" />
+    </Key>
+    <Property Name="MaDonHang" Type="Int32" Nullable="false" />
+    <Property Name="MaSanPham" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="DonHang" Relationship="QuanLyBanLapTopModel.FK_CT_DonHang_DonHang" FromRole="CT_DonHang" ToRole="DonHang" />
+    <NavigationProperty Name="SanPham" Relationship="QuanLyBanLapTopModel.FK_CT_DonHang_SanPham" FromRole="CT_DonHang" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="DonHang">
+    <Key>
+      <PropertyRef Name="MaDonHang" />
+    </Key>
+    <Property Name="MaDonHang" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayDat" Type="DateTime" Precision="0" />
+    <Property Name="NgayGiao" Type="DateTime" Precision="0" />
+    <Property Name="TinhTrangThanhToan" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MaKhachHang" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="CT_DonHang" Relationship="QuanLyBanLapTopModel.FK_CT_DonHang_DonHang" FromRole="DonHang" ToRole="CT_DonHang" />
+    <NavigationProperty Name="KhachHang" Relationship="QuanLyBanLapTopModel.FK_DonHang_KhachHang" FromRole="DonHang" ToRole="KhachHang" />
+  </EntityType>
+  <EntityType Name="HinhAnhSP">
+    <Key>
+      <PropertyRef Name="MaSanPham" />
+    </Key>
+    <Property Name="MaSanPham" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Hinh1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Hinh2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Hinh3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Hinh4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SanPham" Relationship="QuanLyBanLapTopModel.FK_SanPham_HinhAnhSP" FromRole="HinhAnhSP" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="MaKhachHang" />
+    </Key>
+    <Property Name="MaKhachHang" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="TenKhachHang" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="GioiTinh" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+    <Property Name="DienThoai" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="DonHangs" Relationship="QuanLyBanLapTopModel.FK_DonHang_KhachHang" FromRole="KhachHang" ToRole="DonHang" />
+  </EntityType>
+  <EntityType Name="Loai">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoai" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="HinhAnh" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SanPhams" Relationship="QuanLyBanLapTopModel.FK_SanPham_Loai" FromRole="Loai" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="LoaiTinTuc">
+    <Key>
+      <PropertyRef Name="MaLoaiTin" />
+    </Key>
+    <Property Name="MaLoaiTin" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoaiTin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TinTucs" Relationship="QuanLyBanLapTopModel.FK_CT_TinTuc_LoaiTin" FromRole="LoaiTinTuc" ToRole="TinTuc" />
+  </EntityType>
+  <EntityType Name="MoTa">
+    <Key>
+      <PropertyRef Name="MaSanPham" />
+    </Key>
+    <Property Name="MaSanPham" Type="Int32" Nullable="false" />
+    <Property Name="CPU" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="RAM" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ManHinh" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="DoHoa" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OCung" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="HeDieuHanh" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TrongLuong" Type="Double" />
+    <Property Name="KichThuoc" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="XuatXu" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="NamRaMat" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SanPham" Relationship="QuanLyBanLapTopModel.FK_SanPham_MoTa" FromRole="MoTa" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="NhaSanXuat">
+    <Key>
+      <PropertyRef Name="MaNSX" />
+    </Key>
+    <Property Name="MaNSX" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNSX" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SanPhams" Relationship="QuanLyBanLapTopModel.FK_SanPham_NhaSanXuat" FromRole="NhaSanXuat" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="MaSanPham" />
+    </Key>
+    <Property Name="MaSanPham" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSanPham" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Gia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AnhBia" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="SoLuongTon" Type="Int32" />
+    <Property Name="MaNSX" Type="Int32" Nullable="false" />
+    <Property Name="MaLoai" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CT_DonHang" Relationship="QuanLyBanLapTopModel.FK_CT_DonHang_SanPham" FromRole="SanPham" ToRole="CT_DonHang" />
+    <NavigationProperty Name="HinhAnhSP" Relationship="QuanLyBanLapTopModel.FK_SanPham_HinhAnhSP" FromRole="SanPham" ToRole="HinhAnhSP" />
+    <NavigationProperty Name="Loai" Relationship="QuanLyBanLapTopModel.FK_SanPham_Loai" FromRole="SanPham" ToRole="Loai" />
+    <NavigationProperty Name="MoTa" Relationship="QuanLyBanLapTopModel.FK_SanPham_MoTa" FromRole="SanPham" ToRole="MoTa" />
+    <NavigationProperty Name="NhaSanXuat" Relationship="QuanLyBanLapTopModel.FK_SanPham_NhaSanXuat" FromRole="SanPham" ToRole="NhaSanXuat" />
+  </EntityType>
+  <EntityType Name="TinTuc">
+    <Key>
+      <PropertyRef Name="MaTin" />
+    </Key>
+    <Property Name="MaTin" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TieuDe" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="AnhBia" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NgayTao" Type="DateTime" Precision="0" />
+    <Property Name="Cmt" Type="Int32" />
+    <Property Name="MaLoaiTin" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LoaiTinTuc" Relationship="QuanLyBanLapTopModel.FK_CT_TinTuc_LoaiTin" FromRole="TinTuc" ToRole="LoaiTinTuc" />
+  </EntityType>
+  <Association Name="FK_CT_DonHang_DonHang">
+    <End Role="DonHang" Type="QuanLyBanLapTopModel.DonHang" Multiplicity="1" />
+    <End Role="CT_DonHang" Type="QuanLyBanLapTopModel.CT_DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="MaDonHang" />
+      </Principal>
+      <Dependent Role="CT_DonHang">
+        <PropertyRef Name="MaDonHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_DonHang_SanPham">
+    <End Role="SanPham" Type="QuanLyBanLapTopModel.SanPham" Multiplicity="1" />
+    <End Role="CT_DonHang" Type="QuanLyBanLapTopModel.CT_DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSanPham" />
+      </Principal>
+      <Dependent Role="CT_DonHang">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonHang_KhachHang">
+    <End Role="KhachHang" Type="QuanLyBanLapTopModel.KhachHang" Multiplicity="1" />
+    <End Role="DonHang" Type="QuanLyBanLapTopModel.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKhachHang" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaKhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_HinhAnhSP">
+    <End Role="SanPham" Type="QuanLyBanLapTopModel.SanPham" Multiplicity="1" />
+    <End Role="HinhAnhSP" Type="QuanLyBanLapTopModel.HinhAnhSP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSanPham" />
+      </Principal>
+      <Dependent Role="HinhAnhSP">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_Loai">
+    <End Role="Loai" Type="QuanLyBanLapTopModel.Loai" Multiplicity="1" />
+    <End Role="SanPham" Type="QuanLyBanLapTopModel.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Loai">
+        <PropertyRef Name="MaLoai" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_TinTuc_LoaiTin">
+    <End Role="LoaiTinTuc" Type="QuanLyBanLapTopModel.LoaiTinTuc" Multiplicity="1" />
+    <End Role="TinTuc" Type="QuanLyBanLapTopModel.TinTuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiTinTuc">
+        <PropertyRef Name="MaLoaiTin" />
+      </Principal>
+      <Dependent Role="TinTuc">
+        <PropertyRef Name="MaLoaiTin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_MoTa">
+    <End Role="SanPham" Type="QuanLyBanLapTopModel.SanPham" Multiplicity="1" />
+    <End Role="MoTa" Type="QuanLyBanLapTopModel.MoTa" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSanPham" />
+      </Principal>
+      <Dependent Role="MoTa">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_NhaSanXuat">
+    <End Role="NhaSanXuat" Type="QuanLyBanLapTopModel.NhaSanXuat" Multiplicity="1" />
+    <End Role="SanPham" Type="QuanLyBanLapTopModel.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaSanXuat">
+        <PropertyRef Name="MaNSX" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaNSX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,12 @@
+D:\DoAnNam3\CNPM_Thu4_Tiet123_2001181417_PhamThiVi_TimHieuCongNgheFlutter\QL_TourDLPM\BLL_DAL\bin\Debug\BLL_DAL.dll.config
+D:\DoAnNam3\CNPM_Thu4_Tiet123_2001181417_PhamThiVi_TimHieuCongNgheFlutter\QL_TourDLPM\BLL_DAL\bin\Debug\BLL_DAL.dll
+D:\DoAnNam3\CNPM_Thu4_Tiet123_2001181417_PhamThiVi_TimHieuCongNgheFlutter\QL_TourDLPM\BLL_DAL\bin\Debug\BLL_DAL.pdb
+D:\DoAnNam3\CNPM_Thu4_Tiet123_2001181417_PhamThiVi_TimHieuCongNgheFlutter\QL_TourDLPM\BLL_DAL\obj\Debug\BLL_DAL.csprojResolveAssemblyReference.cache
+D:\DoAnNam3\CNPM_Thu4_Tiet123_2001181417_PhamThiVi_TimHieuCongNgheFlutter\QL_TourDLPM\BLL_DAL\obj\Debug\BLL_DAL.dll
+D:\DoAnNam3\CNPM_Thu4_Tiet123_2001181417_PhamThiVi_TimHieuCongNgheFlutter\QL_TourDLPM\BLL_DAL\obj\Debug\BLL_DAL.pdb
+D:\UngDung\QL_TourDLPM\BLL_DAL\bin\Debug\BLL_DAL.dll.config
+D:\UngDung\QL_TourDLPM\BLL_DAL\bin\Debug\BLL_DAL.dll
+D:\UngDung\QL_TourDLPM\BLL_DAL\bin\Debug\BLL_DAL.pdb
+D:\UngDung\QL_TourDLPM\BLL_DAL\obj\Debug\BLL_DAL.dll
+D:\UngDung\QL_TourDLPM\BLL_DAL\obj\Debug\BLL_DAL.pdb
+D:\UngDung\QL_TourDLPM\BLL_DAL\obj\Debug\BLL_DAL.csprojResolveAssemblyReference.cache

@@ -1,0 +1,57 @@
+﻿@{
+    Layout = null;
+}
+@model DoAn_CNWEB_BanLapTop.Models.Loai
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ChinhSuaLoai</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+    <!--iCON-->
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+</head>
+<body>
+     @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+    <br />
+        <div class="mx-auto" style="width:500px;border:1px solid black">
+            <div style="width:450px; padding-left:20px">
+          <h2 style="color:blue; text-align:center">CHỈNH SỬA SẢN PHẨM</h2>
+    
+            @Html.HiddenFor(model => model.MaLoai)   
+            <div class="editor-label">
+            Tên Loại sản phẩm:
+            </div>
+            <div class="form-group ">
+                @Html.TextBoxFor(model => model.TenLoai, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.TenLoai)
+            </div>
+    
+            <div class="editor-label">
+              Hinh ảnh:
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.HinhAnh, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.HinhAnh)
+            </div>
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </div>
+              <div>
+        @Html.ActionLink("Back to List", "SanPham")
+    </div>
+            </div>
+        
+    }
+    
+  
+</body>
+</html>

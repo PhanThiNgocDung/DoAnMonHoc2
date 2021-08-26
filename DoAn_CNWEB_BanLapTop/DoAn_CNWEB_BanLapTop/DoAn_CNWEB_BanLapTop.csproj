@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC694311-A18E-47C2-8212-DC379EF4E577}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DoAn_CNWEB_BanLapTop</RootNamespace>
+    <AssemblyName>DoAn_CNWEB_BanLapTop</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AdminLoaiController.cs" />
+    <Compile Include="Controllers\AdminLoaiTinController.cs" />
+    <Compile Include="Controllers\AdminKhachHangController.cs" />
+    <Compile Include="Controllers\AdminSPController.cs" />
+    <Compile Include="Controllers\AdminLoaiSPController.cs" />
+    <Compile Include="Controllers\AdminTinTucController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoaiSPController.cs" />
+    <Compile Include="Controllers\NguoiDungController.cs" />
+    <Compile Include="Controllers\NhaXuatBanController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\TinTucController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\QL_LapTop.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_LapTop.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="content\banner.jpg" />
+    <Content Include="content\js\bootstrap.bundle.js" />
+    <Content Include="content\js\bootstrap.bundle.min.js" />
+    <Content Include="content\js\bootstrap.js" />
+    <Content Include="content\js\bootstrap.min.js" />
+    <Content Include="content\js\Food.js" />
+    <Content Include="content\js\jquery-3.3.1.min.js" />
+    <Content Include="content\layout-home.css" />
+    <Content Include="Global.asax" />
+    <Content Include="HinhAnhSP\AnhBiaAsus.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaAsus2.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaAsus3.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaAsus4.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaAsus5.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaAsus6.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaDell1.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaDell2.png" />
+    <Content Include="HinhAnhSP\AnhBiaDell3.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaDell4.png" />
+    <Content Include="HinhAnhSP\AnhBiaDell5.png" />
+    <Content Include="HinhAnhSP\AnhBiaDell6.png" />
+    <Content Include="HinhAnhSP\AnhBiaHP1.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaHP2.png" />
+    <Content Include="HinhAnhSP\AnhBiaHP3.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaHP4.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaHP5.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaHP6.jpg" />
+    <Content Include="HinhAnhSP\AnhBiaMac1.jpeg" />
+    <Content Include="HinhAnhSP\AnhBiaMac2.jpeg" />
+    <Content Include="HinhAnhSP\AnhBiaMac3.gif" />
+    <Content Include="HinhAnhSP\AnhBiaMac4.gif" />
+    <Content Include="HinhAnhSP\AnhBiaMac5.gif" />
+    <Content Include="HinhAnhSP\AnhBiaMac6.gif" />
+    <Content Include="HinhAnhSP\Asus1.jpg" />
+    <Content Include="HinhAnhSP\Asus2.jpg" />
+    <Content Include="HinhAnhSP\Asus21.jpg" />
+    <Content Include="HinhAnhSP\Asus22.jpg" />
+    <Content Include="HinhAnhSP\Asus23.jpg" />
+    <Content Include="HinhAnhSP\Asus31.jpg" />
+    <Content Include="HinhAnhSP\Asus32.jpg" />
+    <Content Include="HinhAnhSP\Asus33.jpg" />
+    <Content Include="HinhAnhSP\Asus41.jpg" />
+    <Content Include="HinhAnhSP\Asus42.jpg" />
+    <Content Include="HinhAnhSP\Asus51.jpg" />
+    <Content Include="HinhAnhSP\Asus52.jpg" />
+    <Content Include="HinhAnhSP\Asus53.jpg" />
+    <Content Include="HinhAnhSP\Asus61.jpg" />
+    <Content Include="HinhAnhSP\Asus62.jpg" />
+    <Content Include="HinhAnhSP\Asus63.jpg" />
+    <Content Include="HinhAnhSP\Dell11.jpg" />
+    <Content Include="HinhAnhSP\Dell12.jpg" />
+    <Content Include="HinhAnhSP\Dell13.jpg" />
+    <Content Include="HinhAnhSP\Dell14.jpg" />
+    <Content Include="HinhAnhSP\Dell21.jpg" />
+    <Content Include="HinhAnhSP\Dell22.jpg" />
+    <Content Include="HinhAnhSP\Dell23.jpg" />
+    <Content Include="HinhAnhSP\Dell24.jpg" />
+    <Content Include="HinhAnhSP\Dell31.jpg" />
+    <Content Include="HinhAnhSP\Dell32.jpg" />
+    <Content Include="HinhAnhSP\Dell33.jpg" />
+    <Content Include="HinhAnhSP\Dell41.jpg" />
+    <Content Include="HinhAnhSP\Dell42.jpg" />
+    <Content Include="HinhAnhSP\Dell43.jpg" />
+    <Content Include="HinhAnhSP\Dell44.jpg" />
+    <Content Include="HinhAnhSP\Dell51.jpg" />
+    <Content Include="HinhAnhSP\Dell52.jpg" />
+    <Content Include="HinhAnhSP\Dell53.jpg" />
+    <Content Include="HinhAnhSP\Dell54.png" />
+    <Content Include="HinhAnhSP\Dell61.jpg" />
+    <Content Include="HinhAnhSP\Dell62.jpg" />
+    <Content Include="HinhAnhSP\Dell63.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus1_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus1_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus1_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus1_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus1_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus2_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus2_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus2_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus2_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus2_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus3_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus3_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus3_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus3_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus3_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus4_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus4_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus4_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus4_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus4_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus5_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus5_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus5_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus5_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus5_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus6_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus6_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus6_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus6_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhAsus6_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhDell1_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhDell1_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhDell1_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhDell1_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhDell1_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhDell2_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhDell2_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhDell2_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhDell2_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhDell2_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhDell3_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhDell3_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhDell3_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhDell3_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhDell4_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhDell4_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhDell4_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhDell4_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhDell5_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhDell5_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhDell5_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhDell5_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhDell6_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhDell6_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhDell6_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhHP1_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhHP1_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhHP1_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhHP1_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhHP1_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhHP2_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhHP2_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhHP2_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhHP2_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhHP2_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhHP3_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhHP3_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhHP3_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhHP3_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhHP3_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhHP4_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhHP4_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhHP4_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhHP4_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhHP4_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhHP5_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhHP5_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhHP5_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhHP5_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhHP5_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhHP6_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhHP6_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhHP6_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhHP6_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhHP6_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhLoaiGame.jpg" />
+    <Content Include="HinhAnhSP\HinhLoaiHocTap.jpg" />
+    <Content Include="HinhAnhSP\HinhLoaiKiThuat.jpg" />
+    <Content Include="HinhAnhSP\HinhLoaiMongNhe.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock1_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock1_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock1_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock1_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock1_Anh5.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock1_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock2_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock2_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock2_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock2_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock2_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock3_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock3_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock3_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock3_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock3_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock4_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock4_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock4_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock4_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock4_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock5_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock5_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock5_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock5_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock5_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock6_Anh1.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock6_Anh2.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock6_Anh3.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock6_Anh4.jpg" />
+    <Content Include="HinhAnhSP\HinhMacBoock6_AnhBia.jpg" />
+    <Content Include="HinhAnhSP\HP11.jpg" />
+    <Content Include="HinhAnhSP\HP12.jpg" />
+    <Content Include="HinhAnhSP\HP13.jpg" />
+    <Content Include="HinhAnhSP\HP21.png" />
+    <Content Include="HinhAnhSP\HP22.png" />
+    <Content Include="HinhAnhSP\HP23.png" />
+    <Content Include="HinhAnhSP\HP31.jpg" />
+    <Content Include="HinhAnhSP\HP32.jpg" />
+    <Content Include="HinhAnhSP\HP33.jpg" />
+    <Content Include="HinhAnhSP\HP41.jpg" />
+    <Content Include="HinhAnhSP\HP42.jpg" />
+    <Content Include="HinhAnhSP\HP51.jpg" />
+    <Content Include="HinhAnhSP\HP52.jpg" />
+    <Content Include="HinhAnhSP\HP53.jpg" />
+    <Content Include="HinhAnhSP\HP61.jpg" />
+    <Content Include="HinhAnhSP\HP62.jpg" />
+    <Content Include="HinhAnhSP\HP63.jpg" />
+    <Content Include="HinhAnh\Cart.png" />
+    <Content Include="HinhAnh\FB.png" />
+    <Content Include="HinhAnh\GioHang.png" />
+    <Content Include="HinhAnh\HinhNen1.png" />
+    <Content Include="HinhAnh\HinhNen2.png" />
+    <Content Include="HinhAnh\HinhNen3.jpg" />
+    <Content Include="HinhAnh\HinhNen4.png" />
+    <Content Include="HinhAnh\HinhNen5.jpg" />
+    <Content Include="HinhAnh\LogoFaHaSa.JPG" />
+    <Content Include="HinhAnh\LogoSHOP.png" />
+    <Content Include="HinhAnh\Nguoi.jpg" />
+    <Content Include="HinhAnh\search.JPG" />
+    <Content Include="HinhAnh\ThanhToanThe.jpg" />
+    <Content Include="HinhAnh\Tung.jpg" />
+    <Content Include="HinhAnh\VanChuyen.png" />
+    <Content Include="HinhAnh\Vi.jpg" />
+    <Content Include="MauTin\tin1.jpg" />
+    <Content Include="MauTin\tin2.jpg" />
+    <Content Include="MauTin\tin3.jpg" />
+    <Content Include="content\js\bootstrap.bundle.js.map" />
+    <Content Include="content\js\bootstrap.bundle.min.js.map" />
+    <Content Include="content\js\bootstrap.js.map" />
+    <Content Include="content\js\bootstrap.min.js.map" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Home\timkiem.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Share\LayOut.cshtml" />
+    <Content Include="Views\Home\HeThongSieuThi.cshtml" />
+    <Content Include="Views\Home\GioiThieu.cshtml" />
+    <Content Include="Views\LoaiSP\LoaiProduct.cshtml" />
+    <Content Include="Views\LoaiSP\HienSPTheoLoai.cshtml" />
+    <Content Include="Views\NhaXuatBan\NhaSanXuatProduct.cshtml" />
+    <Content Include="Views\NhaXuatBan\HienSPTheoNXB.cshtml" />
+    <Content Include="Views\Product\SanPham.cshtml" />
+    <Content Include="Views\Product\chiTietSP.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartail.cshtml" />
+    <Content Include="Views\NguoiDung\DangKy.cshtml" />
+    <Content Include="Views\NguoiDung\DangNhap.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TinTuc\TinTucProduct.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TinTuc\hienThiDSTinTuc.cshtml" />
+    <Content Include="Views\TinTuc\XemChiTietTinTuc.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\lienHe.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TinTuc\hienThiTinTuc.cshtml" />
+    <Content Include="Views\AdminSP\SanPham.cshtml" />
+    <Content Include="Views\Share\LayOutSP.cshtml" />
+    <Content Include="Views\AdminLoaiSP\sideBarDept.cshtml" />
+    <Content Include="Views\Share\QLSanPham.cshtml" />
+    <Content Include="Views\AdminLoaiSP\ShowEmplParameter.cshtml" />
+    <Content Include="Views\AdminSP\ChinhSuaSP.cshtml" />
+    <Content Include="Views\AdminSP\TaoSP.cshtml" />
+    <Content Include="Views\AdminSP\XoaSP.cshtml" />
+    <Content Include="Views\AdminSP\ChiTietSP.cshtml" />
+    <Content Include="Views\AdminLoaiSP\TaoLoaiSP.cshtml" />
+    <Content Include="Views\AdminLoaiSP\XoaLoaiSP.cshtml" />
+    <Content Include="Views\AdminLoai\Loai.cshtml" />
+    <Content Include="Views\AdminLoai\ThemLoai.cshtml" />
+    <Content Include="Views\AdminLoaiSP\ChiTietLoaiSP.cshtml" />
+    <Content Include="Views\AdminLoai\ChinhSuaLoai.cshtml" />
+    <Content Include="Views\AdminLoai\XoaLoai.cshtml" />
+    <Content Include="Views\AdminLoaiTin\LoaiTin.cshtml" />
+    <Content Include="Views\AdminTinTuc\TinTuc.cshtml" />
+    <Content Include="Views\AdminTinTuc\TaoTinTuc.cshtml" />
+    <Content Include="Views\AdminLoaiSP\ChinhSuaLoaiSP.cshtml" />
+    <Content Include="Views\AdminLoaiTin\hieThiTenTin.cshtml" />
+    <Content Include="Views\AdminTinTuc\XoaTinTuc.cshtml" />
+    <Content Include="Views\AdminTinTuc\TinTucTheoMa.cshtml" />
+    <Content Include="Views\AdminKhachHang\KhachHang.cshtml" />
+    <Content Include="Views\AdminKhachHang\XoaKhachHang.cshtml" />
+    <Content Include="Views\AdminTinTuc\ChinhSuaTinTuc.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\QL_LapTop.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QL_LapTop.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\QL_LapTop.dbml.layout">
+      <DependentUpon>QL_LapTop.dbml</DependentUpon>
+    </None>
+    <Content Include="Views\Home\Thongbao.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:30088/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "hienThiTinTuc";
+    Layout = "~/Views/Share/LayOut.cshtml";
+}
+<style>
+     #SP1 {
+        transition: 3s;
+    }
+
+    #SP1:hover {
+        transform: translateX(-20px);
+    }
+</style>
+ <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-6" id="SP1">
+                <div class="blog__item">
+                    <div class="blog__item__pic" >
+                        <img src="@Url.Content("~/MauTin/" + @item.AnhBia)" height="400px"; width="400px"/>
+                    </div>
+                </div>
+                <div class="blog__item__text">
+                <ul>
+                    <li><i class="fa fa-calendar-o"></i>@item.NgayTao</li>
+                    <li><i class="fa fa-comment-o"></i>@item.Cmt</li>
+                </ul>
+                @if (item.TieuDe.Length > 30)
+                {
+                    <h5><a href="#">@item.TieuDe.Substring(0, 50)...</a></h5>
+                    <p>@item.NoiDung.Substring(0,100)...</p>
+                   <p> <a href="@Url.Action("XemChiTietTinTuc", new {@mt=item.MaTin})" class="btn btn-outline-warning">Xem chi tiết<span class="arrow_right"></span></a></p>
+                 <br />
+                }
+                else
+                {
+                    <h5><a href="#">@item.TieuDe</a></h5>
+                    <p>@item.NoiDung.Substring(0,100)...</p>
+                  <p>  <a href="@Url.Action("XemChiTietTinTuc", new {@mt=item.MaTin})" class="btn btn-outline-warning">Xem chi tiết<span class="arrow_right"></span></a></p>
+                    <br />
+                }
+                
+                </div>
+            </div>
+        }
+    </div>

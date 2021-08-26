@@ -1,0 +1,123 @@
+﻿@model DoAn_CNWEB_BanLapTop.Models.SanPham
+@{
+    ViewBag.Title = "ChiTietSP";
+}
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+
+</head>
+    <div class="form-control mx-auto" style="width:50%">
+
+        <h2 class="mt-3" style="color: blue; font-weight: bold; text-align:center">THÔNG TIN SẢN PHẨM</h2>
+
+        <div class="row">
+
+            <div class="col-5">
+                <img src="~/HinhAnhSP/@Html.DisplayFor(model => model.AnhBia)" style="width:100%"/>
+            </div>
+
+            <div class="col-7">
+                <table>
+                    <tr>
+                        <td>
+                            Tên sản phẩm:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.TenSanPham)</td>
+                    </tr>
+                     <tr>
+                        <td>
+                            Giá:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.Gia)</td>
+                    </tr>
+                     <tr>
+                        <td>
+                            Số lượng tồn:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.SoLuongTon)</td>
+                    </tr>
+                     <tr>
+                        <td>
+                           Mã hãng sản phẩm:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MaNSX)</td>
+                    </tr>
+                     <tr>
+                        <td>
+                            Mã loại sản phẩm:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MaLoai)</td>
+                    </tr>
+                     <tr>
+                        <td>
+                            CPU:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MoTa.CPU)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            RAM:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MoTa.RAM)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Mành hình:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MoTa.ManHinh)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Đồ họa:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MoTa.DoHoa)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ổ cứng:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MoTa.OCung)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hệ điều hành:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MoTa.HeDieuHanh)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Trọng lượng:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MoTa.TrongLuong)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Kích thước:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MoTa.KichThuoc)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Xuất xứ:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MoTa.XuatXu)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Năm ra mắt:
+                        </td>
+                        <td>@Html.DisplayFor(model => model.MoTa.NamRaMat)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+            <p>
+        @Html.ActionLink("Back to List", "SanPham")
+    </p>
+    </div>
+

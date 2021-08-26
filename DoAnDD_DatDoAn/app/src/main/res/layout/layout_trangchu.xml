@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.TrangChinh">
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawerlayout">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize">
+                    <TextView
+                        android:id="@+id/txt_DiaChiKH"
+                        android:layout_width="250dp"
+                        android:layout_height="30dp"
+                        android:drawableLeft="@drawable/ic_baseline_add_location_alt_24"
+                        android:text="Địa chỉ của bạn"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="20dp">
+                    </TextView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+                        <Button
+                            android:id="@+id/bn_TimKiem"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/ic_baseline_search_off_24"></Button>
+                        <Button
+                            android:layout_marginRight="5dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:backgroundTint="@color/white"
+                            android:background="@drawable/ic_baseline_mail_outline_24"></Button>
+                    </LinearLayout>
+
+
+                </androidx.appcompat.widget.Toolbar>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:id="@+id/liner_loaiSP">
+                    <ViewFlipper
+                        android:id="@+id/viewfilpper"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" >
+                    </ViewFlipper>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                     <androidx.recyclerview.widget.RecyclerView
+                         android:id="@+id/rc_loaisanpham"
+                         android:layout_width="match_parent"
+                         android:layout_height="200dp"
+                         android:layout_gravity="center"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Những món theo quán ăn "
+                        android:textSize="20dp"
+                        android:drawableRight="@drawable/ic_baseline_navigate_next_24">
+
+                    </TextView>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rc_quanBan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+                <LinearLayout
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đặt lại lần nữa"
+                        android:textSize="20dp"
+                        android:drawableRight="@drawable/ic_baseline_navigate_next_24">
+
+                    </TextView>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rc_DanhSachDaDat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+                <LinearLayout
+                    android:paddingTop="10dp"
+                    android:paddingLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="930dp"
+                    android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Những món khác "
+                            android:drawableRight="@drawable/ic_baseline_no_food_24"
+                            android:textStyle="bold"
+                            android:textSize="20dp">
+
+                        </TextView>
+                        <FrameLayout
+                            android:id="@+id/fl_sanPham"
+                            android:layout_width="match_parent"
+                            android:layout_height="910dp">
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+
+
+            </LinearLayout>
+        </ScrollView>
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/navigationview">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:background="@color/maunen"
+                        android:gravity="center">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/img_anhKH"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp" />
+                            <TextView
+                                android:id="@+id/txt_TenKH"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Phạm T. Vi"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/txt_EmailKH"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="phamthivi459@gmail.com"
+                                android:textSize="18dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp">
+                        <ListView
+                            android:id="@+id/lv_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"></ListView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="Hotline: 0376437459"
+                            android:textSize="18dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ORDER FOOD"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            >
+
+                        </TextView>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>

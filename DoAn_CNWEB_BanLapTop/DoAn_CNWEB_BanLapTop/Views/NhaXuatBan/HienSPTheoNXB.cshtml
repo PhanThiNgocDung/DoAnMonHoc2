@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DoAn_CNWEB_BanLapTop.Models.SanPham>
+@{
+    ViewBag.Title = "HienSPTheoNXB";
+    Layout = "~/Views/Share/LayOutSP.cshtml";
+}
+<div class="row">
+@foreach (var item in Model) {
+    
+        <div class=" col col-3">
+            <img src="~/HinhAnhSP/@Html.DisplayFor(modelItem => item.AnhBia)" height="70%;" width="70%" alt="Image"/>
+            @if (item.TenSanPham.Length > 30)
+            {
+                <p><strong title="@item.TenSanPham">Tên đề: @item.TenSanPham.Substring(0, 30)...</strong>
+                    <br />
+                    <a href=" @Url.Action("ChiTietSP", "Product", new { maSP = item.MaSanPham })">Xem Chi tiết</a>
+                </p>
+            }
+            else
+            {
+               <p><strong title="@item.TenSanPham">Tên đề: @item.TenSanPham</strong><br /><a href=" @Url.Action("ChiTietSP", "Product", new { maSP=item.MaSanPham })">Xem Chi tiết</a></p>
+            <div class="clear"></div>
+            }
+                
+        </div>
+    
+}
+</div>
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/view_Dau_bai23"
+        android:background="@color/maunen">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    <FrameLayout
+        android:id="@+id/FL_TrangChu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view_Cuoi_bai23"
+        android:layout_below="@+id/view_Dau_bai23"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-1dp"
+        ></FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/view_Cuoi_bai23"
+        app:menu="@menu/menu"
+        android:background="@color/maunen"
+        ></com.google.android.material.bottomnavigation.BottomNavigationView>
+</RelativeLayout>

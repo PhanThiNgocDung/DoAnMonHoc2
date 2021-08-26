@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<DoAn_CNWEB_BanLapTop.Models.Loai>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>sideBarDept</title>
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+</head>
+<body>
+
+    @foreach (var item in Model)
+    {
+        <li>@Html.ActionLink(item.TenLoai, "ShowEmplParameter", "AdminLoaiSP", new { id=item.MaLoai },null)</li>
+    }
+
+</body>
+</html>

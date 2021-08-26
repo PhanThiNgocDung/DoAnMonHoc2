@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "SanPham";
+    Layout = "~/Views/Share/QLSanPham.cshtml";
+}
+@model IEnumerable<DoAn_CNWEB_BanLapTop.Models.SanPham>
+<div class="left-content">		
+				<div class="category">
+					<div class="category-left-title">
+						category
+					</div>
+					<ul>
+                        @Html.Action("sideBarDept", "AdminLoaiSP")
+					</ul>
+				</div>
+			</div>
+			
+			<div class="right-content">
+                <div class="container">
+
+    <h2 class="mt-3" style="text-align:center;color:blue;font-weight:bold;">
+        TẤT CẢ SẢN PHẨM
+    </h2>
+    <p>
+        @Html.ActionLink("Create New", "TaoSP")
+    </p>
+    <table class="table bordered">
+        <tr>
+            <th>Tên Sản Phẩm
+            </th>
+            <th>Giá
+            </th>
+            <th>Ảnh Bìa
+            </th>
+            <th>Số Lượng Tồn
+            </th>
+            <th>Mã Nhà Sản Xuất
+            </th>
+            <th>Mã Loại
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.TenSanPham)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gia)
+                </td>
+                <td>
+                    <img src="~/HinhAnhSP/@Html.DisplayFor(modelItem => item.AnhBia)" style="width:50px"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuongTon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaNSX)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaLoai)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.tbl_Deparment.Name)
+                </td>*@
+            <td>
+                @Html.ActionLink("Edit", "ChinhSuaSP", new { id=item.MaSanPham }) |
+                @Html.ActionLink("Details", "ChiTietSP", new { id=item.MaSanPham }) |
+                @Html.ActionLink("Delete", "XoaSP", new { id=item.MaSanPham })
+            </td>
+        </tr>
+    }
+    
+    </table>
+    </div>				
+			</div>
+			<div class="line-20"></div>

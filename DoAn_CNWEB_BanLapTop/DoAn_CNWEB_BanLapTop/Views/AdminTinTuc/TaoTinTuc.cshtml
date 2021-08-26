@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+@model DoAn_CNWEB_BanLapTop.Models.TinTuc
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TaoTinTuc</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+    <!--iCON-->
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+</head>
+<body>
+     @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+    
+        <div class="form-control mx-auto" style="width:800px;">
+            <h2 class="mt-3" style="color:blue; font-weight:bold; text-align:center">THÊM SẢN PHẨM</h2>
+    
+            <div class="form-group">
+               Tiêu đề:
+                @Html.TextBoxFor(model => model.TieuDe, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.TieuDe, "", new { @class="text-danger" })
+            </div>
+
+            <div class="form-group">
+                Nội dung :
+                @Html.TextBoxFor(model => model.NoiDung, new { @class="form-control"}) VNĐ
+                @Html.ValidationMessageFor(model => model.NoiDung, "", new { @class="text-danger" })
+            </div>          
+            
+            <div class="form-group">
+                Hình ảnh:
+                @Html.TextBoxFor(model => model.AnhBia, new { @class="form-control", type="file"})
+                @Html.ValidationMessageFor(model => model.AnhBia, "", new { @class="text-danger" })
+            </div>
+
+            <div class="form-group">
+               Ngày tạo:
+                @Html.TextBoxFor(model => model.NgayTao, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.NgayTao, "", new { @class="text-danger" })
+            </div>  
+
+            <div class="form-group">
+                Số lượng CMT:       
+                 @Html.TextBoxFor(model => model.Cmt, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Cmt, "", new { @class="text-danger" })
+            </div>
+
+            <div class="form-group">
+                Mã loại:        
+              @*  @Html.DropDownListFor(model => model.MaLoaiTin,null,"Chọn Mã loại",new {@class="form-control"
+           })
+                @Html.ValidationMessageFor(model => model.MaLoaiTin, "", new { @class="text-danger" })*@
+                @Html.TextBoxFor(model => model.MaLoaiTin, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.MaLoaiTin, "", new { @class="text-danger" })
+            </div>
+            <br />
+            <p>
+                <input class="btn btn-primary" type="submit" value="Create" />
+            </p>
+            <div>
+                @Html.ActionLink("Back to List", "SanPham", "TinTuc")
+            </div>
+        </div>
+    }
+</body>
+</html>
+

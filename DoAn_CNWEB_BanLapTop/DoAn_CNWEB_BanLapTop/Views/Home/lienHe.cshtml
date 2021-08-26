@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "lienHe";
+    Layout = "~/Views/Share/LayOut.cshtml";
+}
+<style>
+    body {
+         background: url('HinhAnh/HinhVien.jpg') no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+    }
+
+    #lienhe1 {
+        transition: 3s;
+    }
+
+    #lienhe1:hover {
+        transform: translateX(-50px);
+    }
+    #lienhe2 {
+        transition: 3s;
+    }
+    #lienhe2:hover {
+        transform: translateX(50px);
+    }
+
+</style>
+<body>
+    @using (Html.BeginForm())
+    {
+      @Html.ValidationSummary(true)
+    {
+<div class="contact-form spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact__form__title">
+                        <h2 style="text-align:center">HÃY LIÊN HỆ VỚI TÔI KHI BẠN CÒN VẤN ĐỀ CHƯA HIỂU</h2>
+                    </div>
+                </div>
+            </div>
+            <form action="#">
+                <div class="row">
+                    <div id="lienhe1" class="col-lg-5">
+                        <div class="col-lg-12 col-md-3">
+                            <img src="~/HinhAnhSP/AnhBiaAsus4.jpg" />
+                        </div>
+                    </div>
+                    <div id="lienhe2" class="col-lg-7">
+                          <div class="form-group">
+                            <label for="usename">Tên tài khoản hoặc địa chỉ email <span style="color:red">*</span></label>
+                            <input type="text" name="TenDN" id="TenDN"  class="form-control is-invalid" placeholder="Enter your username"/>
+                              </div>
+                            <div class="form-group">
+                            <label for="usename">Hình ảnh mô phỏng:<span style="color:red">*</span></label>
+                            <input type="file" name="HinhAnh" id="MatKhau"  class="form-control is-invalid"/>
+                                </div>
+                         <div class="form-group">
+                            <label for="usename">Nội dung:<span style="color:red">*</span></label>
+                            <textarea style="height:80px" name="NoiDung" class="form-control is-invalid" placeholder="Nội dung"></textarea>
+                         </div>
+                         <center><button type="submit" class="site-btn btn" style="background: #ff6a00;">GỬI CHO TÔI</button></center> 
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    }
+    }
+</body>

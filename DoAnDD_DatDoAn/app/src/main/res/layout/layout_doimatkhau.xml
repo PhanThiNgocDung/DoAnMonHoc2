@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <LinearLayout
+        android:paddingTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+
+        android:layout_weight="1113">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vui lòng nhập số điện thoại!"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+
+                android:layout_marginTop="10dp">
+            </TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/edtsdt1"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/trangtri"
+                android:drawableLeft="@drawable/phone"
+                android:drawablePadding="4dp"
+                android:ems="10"
+                android:hint="Số điện thoại"
+                android:inputType="textPersonName"
+                android:padding="18dp"
+                android:textColorHint="@android:color/holo_red_light"
+                />
+            <TextView
+                android:id="@+id/bn_TiepTuc"
+                android:paddingTop="10dp"
+                android:paddingRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TIẾP THEO"
+                android:gravity="right"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/teal_200">
+
+            </TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

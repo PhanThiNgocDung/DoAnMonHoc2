@@ -1,0 +1,93 @@
+﻿@{
+    Layout = null;
+}
+@model DoAn_CNWEB_BanLapTop.Models.SanPham
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ChinhSuaLoaiSP</title>
+    <meta name="viewport" content="width=device-width" />
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+    <!--iCON-->
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+</head>
+<body>
+     @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+         {
+    <br />
+        <div  class="mx-auto" style="width:500px;margin-left:400px;border:1px solid black">
+            <div style="width:450px; padding-left:20px">
+          <h2 style="color:blue; text-align:center">CHỈNH SỬA SẢN PHẨM</h2>
+    
+            @Html.HiddenFor(model => model.MaSanPham)   
+            <div class="editor-label">
+            Tên sản phẩm:
+            </div>
+            <div class="form-group ">
+                @Html.TextBoxFor(model => model.TenSanPham, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.TenSanPham)
+            </div>
+    
+            <div class="editor-label">
+              Giá:
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.Gia, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Gia)
+            </div>
+    
+            <div class="editor-label">
+               Ảnh bìa:
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.AnhBia, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.AnhBia)
+            </div>
+
+            <div class="editor-label">
+                Số lượng:
+            </div>
+            <div class="form-group">
+                    <input id="txt_SoLuong" class="form-control" type="number" min="1" name="txt_SoLuong" value="@Model.SoLuongTon" style="width:150px"/>
+                @Html.ValidationMessageFor(model => model.SoLuongTon)
+            </div>
+    
+            <div class="editor-label">
+                Mã nhà sản xuất:
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.MaNSX, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.MaNSX)
+            </div>
+
+            <div class="editor-label">
+                Mã loại sản phẩm:
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.MaLoai, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.MaLoai)
+            </div>
+    
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </div>
+              <div>
+        @Html.ActionLink("Back to List", "Loai")
+    </div>
+            </div>
+     }
+        
+    }
+  
+</body>
+</html>

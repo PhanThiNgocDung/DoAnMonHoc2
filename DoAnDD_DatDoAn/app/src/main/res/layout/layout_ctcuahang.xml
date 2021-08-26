@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/maunen">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/hinhnen3"
+        android:orientation="vertical"
+        android:gravity="bottom">
+
+        <ImageView
+            android:paddingTop="70dp"
+            android:id="@+id/img_hinhQuanAnCT"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logo"
+            android:layout_gravity="center"
+            >
+        </ImageView>
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:drawableLeft="@drawable/ic_baseline_cameraswitch_24"
+                android:text=" ĐỐI TÁC CỦA ORDER FOOD"
+                android:textColor="@color/teal_200"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+            <TextView
+                android:id="@+id/txt_tenQuanCT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trà Sữa Ngọc Lan"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black">
+            </TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+            <TextView
+                android:paddingLeft="20dp"
+                android:id="@+id/txt_soCayCTCH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:text="0.9 km">
+            </TextView>
+            <TextView
+                android:paddingLeft="20dp"
+                android:textSize="18dp"
+                android:id="@+id/txt_DiaChiCuaHangCT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Địa chỉ: 22 Tân Kỳ Tân Quý, Phường 13 Tân Bình"
+                android:textColor="@color/black">
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:background="@color/white"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/txt_soSaoCTCH"
+                    android:paddingLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 4.6 (999+)"
+                    android:drawableLeft="@drawable/ic_baseline_star_24">
+                </TextView>
+                <TextView
+                    android:paddingLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 999+"
+                    android:drawableLeft="@drawable/ic_baseline_shopping_cart_24">
+                </TextView>
+                <TextView
+                    android:paddingRight="15dp"
+                    android:gravity="right"
+                    android:paddingLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Xem 999+ nhận xét"
+                    android:textColor="@color/teal_200">
+                </TextView>
+            </LinearLayout>
+                <LinearLayout
+                    android:paddingBottom="15dp"
+                    android:paddingTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                   <TextView
+                       android:paddingRight="15dp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Đáng đồng tiền"
+                       android:textSize="15dp"
+                       android:textColor="@color/black"
+                       android:background="@drawable/trangtri">
+                   </TextView>
+                    <TextView
+                        android:paddingRight="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngon xỉu(999+)"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:background="@drawable/trangtri">
+                    </TextView>
+                    <TextView
+                        android:paddingRight="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đóng gói tốt"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:background="@drawable/trangtri">
+                    </TextView>
+
+                </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="5dp"
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ListView
+                android:id="@+id/lv_sanpham2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </ListView>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "XemChiTietTinTuc";
+    Layout = "~/Views/Share/LayOut.cshtml";
+}
+ <center><div class="card border-dark" style="width:800px">
+        <table class="border-dark mx-3 mb-3 mt-3">
+            <tr class="text-center">
+                <td><h2>@Model.TieuDe</h2></td>
+            </tr>        
+            <tr class="text-center">
+                <td>
+                    <img class="card-header" src="@Url.Content("~/MauTin/" + Model.AnhBia)" />
+                </td>                                
+            </tr>
+               
+            <tr class="text-center">
+                <td class="text-justify">@Model.NoiDung</td>
+            </tr>
+        </table>
+    </div>
+        </center>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<DoAn_CNWEB_BanLapTop.Models.SanPham>
+
+@{
+    Layout = null;
+    Layout = "~/Views/Share/QLSanPham.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowEmplParameter</title>
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+</head>
+<body class="container-fluid">
+    <p>
+        @Html.ActionLink("Tạo Sản Phẩm mới", "TaoSP", "AdminSP")
+    </p>
+    <table class="table">
+        <tr>
+            <th>Tên Sản Phẩm
+            </th>
+            <th>Giá
+            </th>
+            <th>Ảnh Bìa
+            </th>
+            <th>Số Lượng Tồn
+            </th>
+            <th>Mã Nhà Sản Xuất
+            </th>
+            <th>Mã Loại
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenSanPham)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gia)
+                </td>
+                <td>
+                    <img src="~/HinhAnhSP/@Html.DisplayFor(modelItem => item.AnhBia)" style="width:50px"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuongTon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaNSX)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaLoai)
+                </td>
+                <td>
+                     @Html.ActionLink("Edit", "ChinhSuaLoaiSP" , new { id = item.MaSanPham }) |
+                    @Html.ActionLink("Details", "ChiTietLoaiSP", new { id = item.MaSanPham }) |
+                    @Html.ActionLink("Delete", "XoaLoaiSP", new { id = item.MaSanPham })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div>
+        @Html.ActionLink("Back to List", "sideBarDept")
+    </div>
+</body>
+</html>

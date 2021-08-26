@@ -1,0 +1,39 @@
+﻿  @{
+    ViewBag.Title = "Dangnhap";
+    Layout = "~/Views/Share/LayOutSP.cshtml";
+}
+<h3 style="color:red; text-align:center" >@ViewBag.TB</h3>
+@using (Html.BeginForm())
+    {
+      @Html.ValidationSummary(true)
+    {
+         <div class="container" style="border: 1px solid #817b7b">
+                    <!-- Modal Header -->
+              <br />
+                    <div class="modal-header" style="background:darkorange; color: white">
+                      <h4 class="modal-title">ĐĂNG NHẬP TÀI KHOẢN</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="col-8 mx-auto"> 
+                            <div class="form-group">
+                            <label for="usename">Tên tài khoản hoặc địa chỉ email <span style="color:red">*</span></label>
+                            <input type="text" name="TenDN" id="TenDN"  class="form-control is-invalid" placeholder="Enter your username"/>
+
+                            <div class="form-group">
+                            <label for="usename">Mật khẩu <span style="color:red">*</span></label>
+                            <input type="text" name="MatKhau" id="MatKhau"  class="form-control is-invalid" placeholder="Enter your username"/>
+                    </div>
+            </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                       <center>  <input id="Button1" class="mx-auto btn btn-danger" type="submit" value="Đăng Nhập" /> <input id="Checkbox1" type="checkbox" /> Ghi nhớ mật khẩu?
+                        <br />
+                        <a href="#">Quên mật khẩu?</a></center>
+                        <br />
+                    </div>
+              </div>
+             </div>
+
+  }
+  }

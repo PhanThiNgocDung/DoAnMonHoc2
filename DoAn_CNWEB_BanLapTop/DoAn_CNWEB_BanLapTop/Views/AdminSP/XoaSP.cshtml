@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "XoaSP";
+}
+@model DoAn_CNWEB_BanLapTop.Models.SanPham
+    <fieldset style="width:500px; margin-left:400px">
+        <h3>Are you sure you want to delete this?</h3>
+        <legend>Xóa Sản Phẩm</legend>
+    
+        <div class="row">
+
+            <div class="col-3">
+                <img src="~/HinhAnhSP/@Html.DisplayFor(model => model.AnhBia)" style="width:150px"/>
+            </div>
+
+            <div class="col-9">
+                <tr>
+                    <td>Name     :@Html.DisplayFor(model => model.TenSanPham)
+                    </td><br />
+                    <td>Giá   :@Html.DisplayFor(model => model.Gia)
+                    </td><br />
+                    <td>Số Lượng Tồn     :@Html.DisplayFor(model => model.SoLuongTon)
+                    </td><br />
+                    <td>Mã NSX :@Html.DisplayFor(model => model.MaNSX)
+                    </td><br />
+                    <td>Mã Loại :@Html.DisplayFor(model => model.MaLoai)
+                    </td>
+                </tr>
+            </div>
+        </div>
+    </fieldset>
+    @using (Html.BeginForm()) {
+        <p>
+            <input type="submit" value="Delete" /> |
+            @Html.ActionLink("Back to List", "Index1")
+        </p>
+    }

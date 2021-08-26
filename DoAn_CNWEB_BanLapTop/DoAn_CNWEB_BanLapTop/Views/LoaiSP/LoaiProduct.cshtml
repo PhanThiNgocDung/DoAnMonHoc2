@@ -1,0 +1,17 @@
+﻿@using DoAn_CNWEB_BanLapTop.Models;
+@model List<Loai>
+<h5>LAPTOP THEO NHU CẦU CỦA BẠN</h5>
+<div class="row" style="background:White">
+@{
+    foreach (var item in Model)
+        {
+        <div class="col col-3" style="background:White">
+            <button class="btn" style="width:100%; height:100%; background:White" type="submit">
+                <img src="~/HinhAnhSP/@item.HinhAnh" class="rounded-circle" />
+                <br />
+        <a href="@Url.Action("HienSPTheoLoai", "LoaiSP", new{ @maLoai = item.MaLoai})" style="text-transform:uppercase; text-decoration: none; text-align:center">@item.TenLoai</a>
+             </button>
+            </div>
+       }
+}    
+    </div>
